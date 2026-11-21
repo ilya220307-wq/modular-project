@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обратная связь — Модульный проект</title>
+    <title>Заявка на поступление</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,50 +14,89 @@
         <nav class="nav">
             <a href="index.html">Главная</a>
             <a href="about.html">О колледже</a>
-            <a href="form.html">Обратная связь</a>
+            <a href="table.html">Расписание</a>
+            <a href="form.html">Заявка</a>
+            <a href="cascade.html">Каскад</a>
+            <a href="feedback.html">Обратная связь</a>
         </nav>
     </header>
 
     <main class="main">
 
         <section class="form-section">
-            <h1>Форма обратной связи</h1>
-            <p>Заполните форму ниже, и мы свяжемся с вами в ближайшее время.</p>
+            <h1>Заявка на поступление</h1>
+            <p>Заполните форму, чтобы подать документы в колледж. Форма оформлена через внешний файл <code>style.css</code>.</p>
 
-            <form class="contact-form" action="#" method="POST">
+            <form class="application-form" action="#" method="POST">
 
-                <div class="form-group">
-                    <label for="name">Ваше имя *</label>
-                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
-                </div>
+                <fieldset>
+                    <legend>Личные данные</legend>
 
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
-                </div>
+                    <div class="form-group">
+                        <label for="fullname">ФИО *</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Иванов Иван Иванович" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="topic">Тема обращения *</label>
-                    <select id="topic" name="topic" required>
-                        <option value="">— Выберите тему —</option>
-                        <option value="admission">Поступление</option>
-                        <option value="study">Учебный процесс</option>
-                        <option value="technical">Техническая проблема</option>
-                        <option value="other">Другое</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label for="birthdate">Дата рождения *</label>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">Сообщение *</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Опишите ваш вопрос..." required></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+                    </div>
 
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="agree" name="agree" required>
-                    <label for="agree">Я согласен на обработку персональных данных *</label>
-                </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+79161234567"
+                               pattern="\+7[0-9]{10}"
+                               title="Формат: +7 и 10 цифр">
+                    </div>
+                </fieldset>
 
-                <button type="submit" class="btn">Отправить</button>
+                <fieldset>
+                    <legend>Специальность и форма обучения</legend>
+
+                    <div class="form-group">
+                        <label for="specialty">Специальность *</label>
+                        <select id="specialty" name="specialty" required>
+                            <option value="">— Выберите специальность —</option>
+                            <option value="09.02.07">Информационные системы и программирование</option>
+                            <option value="09.02.06">Сетевое и системное администрирование</option>
+                            <option value="09.02.03">Программирование в компьютерных системах</option>
+                            <option value="10.02.05">Обеспечение информационной безопасности</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group radio-group">
+                        <label>Форма обучения *</label>
+                        <div class="radio-row">
+                            <input type="radio" id="fulltime" name="studyform" value="fulltime" checked>
+                            <label for="fulltime">Очная</label>
+                        </div>
+                        <div class="radio-row">
+                            <input type="radio" id="parttime" name="studyform" value="parttime">
+                            <label for="parttime">Заочная</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Дополнительная информация</legend>
+
+                    <div class="form-group">
+                        <label for="experience">Опыт / навыки</label>
+                        <textarea id="experience" name="experience" rows="4" placeholder="Расскажите о себе, если есть опыт в IT..."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">Я согласен на обработку персональных данных *</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn">Отправить заявку</button>
 
             </form>
         </section>

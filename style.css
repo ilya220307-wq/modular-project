@@ -1,3 +1,11 @@
+/* ============================================
+   ПАЛИТРА ПРОЕКТА
+   #2C3E50 — тёмно-синий (шапка, подвал, заголовки)
+   #3498DB — голубой (акценты, кнопки, ссылки)
+   #E74C3C — красный (акцент, hover, id-блок в каскаде)
+   ============================================ */
+
+/* ===== СБРОС ===== */
 * {
     margin: 0;
     padding: 0;
@@ -12,13 +20,15 @@ body {
     background: #F5F6FA;
 }
 
+/* ===== ШАПКА ===== */
 .header {
     background: #2C3E50;
     color: white;
-    padding: 24px 32px;
+    padding: 16px 32px;
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -28,9 +38,29 @@ body {
 }
 
 .header h1 {
-    font-size: 24px;
+    font-size: 20px;
+    flex: 1;
 }
 
+.nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.nav a:hover {
+    background: #3498DB;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 .main {
     max-width: 960px;
     margin: 0 auto;
@@ -45,10 +75,18 @@ section {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+section h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #2C3E50;
+}
+
 section h2 {
+    font-size: 20px;
     color: #3498DB;
     margin-bottom: 16px;
-    font-size: 20px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #3498DB;
 }
 
 section p {
@@ -61,70 +99,6 @@ section ul {
 
 section ul li {
     margin-bottom: 8px;
-}
-
-.footer {
-    background: #2C3E50;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    margin-top: 32px;
-}
-/* ===== НАВИГАЦИЯ ===== */
-.nav {
-    display: flex;
-    gap: 16px;
-}
-
-.nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: background 0.3s;
-}
-
-.nav a:hover {
-    background: #3498DB;
-}
-
-/* ===== СПИСКИ ===== */
-.specialties ul {
-    padding-left: 24px;
-}
-
-.specialties ul li {
-    margin-bottom: 8px;
-    font-size: 16px;
-}
-
-/* ===== ТАБЛИЦА ===== */
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-top: 16px;
-}
-
-.data-table th,
-.data-table td {
-    padding: 16px;
-    text-align: left;
-    border-bottom: 1px solid #E8E8E8;
-    font-size: 16px;
-}
-
-.data-table th {
-    background: #2C3E50;
-    color: white;
-    font-weight: bold;
-}
-
-.data-table tbody tr:nth-child(even) {
-    background: #F0F3F7;
 }
 
 /* ===== ССЫЛКИ ===== */
@@ -146,21 +120,77 @@ section ul li {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* ===== ФОРМА ===== */
+/* ============================================
+   ТАБЛИЦА (для table.html, about.html, cascade.html)
+   Цвета, шрифты, границы, padding, margin — всё из внешнего CSS
+   ============================================ */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-top: 16px;
+    font-size: 16px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 16px;            /* внутренний отступ */
+    margin: 0;               /* у ячеек margin не работает, но задан для демонстрации */
+    text-align: left;
+    border: 1px solid #D5D8DC; /* границы */
+}
+
+.data-table th {
+    background: #2C3E50;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background: #F0F3F7;
+}
+
+.data-table tbody tr:hover {
+    background: #EBF5FB;
+}
+
+/* ============================================
+   ФОРМА (для form.html, feedback.html)
+   ============================================ */
 .form-section {
     max-width: 640px;
 }
 
+.application-form,
 .contact-form {
     background: white;
-    padding: 32px;
+    padding: 32px;            /* внешний отступ формы */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     margin-top: 24px;
+    border: 2px solid #D5D8DC;
+}
+
+fieldset {
+    border: 2px solid #D5D8DC;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+legend {
+    font-weight: bold;
+    color: #3498DB;
+    padding: 0 8px;
+    font-size: 16px;
 }
 
 .form-group {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .form-group label {
@@ -172,15 +202,17 @@ section ul li {
 
 .form-group input[type="text"],
 .form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
 .form-group select,
 .form-group textarea {
     width: 100%;
     padding: 8px 16px;
     font-size: 16px;
+    font-family: inherit;
     border: 2px solid #D5D8DC;
     border-radius: 8px;
     outline: none;
-    font-family: inherit;
 }
 
 .form-group input:focus,
@@ -191,7 +223,24 @@ section ul li {
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 96px;
+}
+
+.radio-group label {
+    margin-bottom: 8px;
+}
+
+.radio-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.radio-row label {
+    display: inline;
+    font-weight: normal;
+    margin: 0;
 }
 
 .checkbox-group {
@@ -224,4 +273,53 @@ section ul li {
 
 .btn:hover {
     background: #2C3E50;
+}
+
+/* ============================================
+   КАСКАД — демонстрация приоритетов селекторов
+   Одинаковое свойство (background) задано тремя способами
+   ============================================ */
+
+/* Селектор 1: ТЕГ div — специфичность (0,0,1) = 1 */
+div {
+    background: #95a5a6;      /* серый */
+    color: white;
+    padding: 20px;
+    margin: 16px 0;
+    border-radius: 8px;
+    border: 2px solid #7f8c8d;
+}
+
+/* Селектор 2: КЛАСС .block — специфичность (0,1,0) = 10
+   Перебивает тег div */
+.block {
+    background: #3498DB;      /* синий */
+    border-color: #2980b9;
+}
+
+/* Селектор 3: ID #highlighted — специфичность (1,0,0) = 100
+   Перебивает и класс, и тег */
+#highlighted {
+    background: #E74C3C;      /* красный */
+    border-color: #c0392b;
+}
+
+/* ===== ПОДВАЛ ===== */
+.footer {
+    background: #2C3E50;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    margin-top: 32px;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header h1 {
+        font-size: 18px;
+    }
 }

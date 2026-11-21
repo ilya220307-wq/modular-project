@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разбор каскада и приоритетов селекторов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <img src="logo.png" alt="Логотип колледжа" class="logo">
+        <h1>Колледж информационных технологий</h1>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О колледже</a>
+            <a href="table.html">Расписание</a>
+            <a href="form.html">Заявка</a>
+            <a href="cascade.html">Каскад</a>
+            <a href="feedback.html">Обратная связь</a>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section class="intro">
+            <h1>Работа каскада и специфичности</h1>
+            <p>На этой странице три блока. У каждого задан <strong>один и тот же</strong> параметр — цвет фона (<code>background</code>) — но через разные селекторы: тег, класс и id. Побеждает селектор с наибольшей специфичностью.</p>
+        </section>
+
+        <section class="cascade-section">
+            <h2>Демонстрация приоритетов</h2>
+
+            <!-- Блок 1: задан только через тег div (специфичность 0,0,1) -->
+            <div>
+                <strong>Блок 1 — только тег <code>div</code></strong>
+                <p>Специфичность: <code>(0,0,1)</code> = 1. Цвет: серый.</p>
+            </div>
+
+            <!-- Блок 2: тег + класс (класс 0,1,0 перебивает тег 0,0,1) -->
+            <div class="block">
+                <strong>Блок 2 — тег <code>div</code> + класс <code>.block</code></strong>
+                <p>Специфичность класса: <code>(0,1,0)</code> = 10. Класс победил тег. Цвет: синий.</p>
+            </div>
+
+            <!-- Блок 3: тег + класс + id (id 1,0,0 перебивает всё) -->
+            <div class="block" id="highlighted">
+                <strong>Блок 3 — тег <code>div</code> + класс <code>.block</code> + id <code>#highlighted</code></strong>
+                <p>Специфичность id: <code>(1,0,0)</code> = 100. ID победил класс и тег. Цвет: красный.</p>
+            </div>
+        </section>
+
+        <section class="explanation">
+            <h2>Почему так работает</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Селектор</th>
+                        <th>Вес</th>
+                        <th>Приоритет</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>div</code></td>
+                        <td>0,0,1</td>
+                        <td>Низкий</td>
+                    </tr>
+                    <tr>
+                        <td><code>.block</code></td>
+                        <td>0,1,0</td>
+                        <td>Средний</td>
+                    </tr>
+                    <tr>
+                        <td><code>#highlighted</code></td>
+                        <td>1,0,0</td>
+                        <td>Высокий</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 16px;">Чем правее единица в записи <code>(a,b,c)</code>, тем она «тяжелее». ID всегда побеждает класс, а класс — тег. Поэтому Блок 3 красный, хотя у него есть и класс, и тег.</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Колледж информационных технологий</p>
+    </footer>
+
+</body>
+</html>
