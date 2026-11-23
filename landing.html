@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивный лендинг</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+
+    <!-- Шапка на flexbox -->
+    <header class="header">
+        <div class="logo">TechStart</div>
+        <nav class="nav">
+            <a href="#features">Преимущества</a>
+            <a href="#about">О нас</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Каркас страницы на CSS Grid -->
+    <main class="main">
+
+        <!-- Приветственный блок -->
+        <section class="hero">
+            <h1>Создаём цифровое будущее</h1>
+            <p>Современные решения для вашего бизнеса. Быстро, качественно, надёжно.</p>
+            <button class="btn">Начать проект</button>
+        </section>
+
+        <!-- Карточки преимуществ на flexbox -->
+        <section class="features" id="features">
+            <h2>Наши преимущества</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Скорость</h3>
+                    <p>Запуск проекта за 2 недели. Быстрая итерация и обратная связь.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Точность</h3>
+                    <p>Работаем по ТЗ, соблюдаем сроки и бюджет. Без сюрпризов.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Надёжность</h3>
+                    <p>Гарантия 12 месяцев на все работы. Техническая поддержка 24/7.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок с картинкой -->
+        <section class="image-block" id="about">
+            <div class="image-content">
+                <h2>О нашей команде</h2>
+                <p>Мы — команда из 15 специалистов с опытом работы более 10 лет. Реализовали более 200 проектов для клиентов из 12 стран.</p>
+                <p>Используем современные технологии: React, Node.js, PostgreSQL, Docker. Следим за трендами и постоянно учимся.</p>
+            </div>
+            <div class="image-wrapper">
+                <img src="team.jpg" alt="Наша команда за работой">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>TechStart</h4>
+                <p>Создаём цифровое будущее с 2015 года</p>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p>Email: info@techstart.ru</p>
+                <p>Тел: +7 (495) 123-45-67</p>
+            </div>
+            <div class="footer-col">
+                <h4>Адрес</h4>
+                <p>г. Москва, ул. Технологическая, д. 10</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 TechStart. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

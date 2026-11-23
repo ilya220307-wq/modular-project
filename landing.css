@@ -1,0 +1,366 @@
+/* ============================================
+   ПАЛИТРА
+   #1a1a2e — тёмно-синий (шапка, подвал)
+   #16213e — синий (акценты)
+   #0f3460 — голубой (кнопки, ссылки)
+   #e94560 — красный (hover)
+   #f5f5f5 — светло-серый (фон)
+   ============================================ */
+
+/* ===== СБРОС ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+/* ============================================
+   КАРКАС СТРАНИЦЫ НА CSS GRID
+   ============================================ */
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* ============================================
+   ШАПКА НА FLEXBOX
+   ============================================ */
+.header {
+    background: #1a1a2e;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e94560;
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #e94560;
+}
+
+/* ============================================
+   ОСНОВНОЙ КОНТЕНТ
+   ============================================ */
+.main {
+    padding: 40px 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn {
+    background: #e94560;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #c73e54;
+}
+
+/* ============================================
+   КАРТОЧКИ ПРЕИМУЩЕСТВ НА FLEXBOX
+   ============================================ */
+.cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ============================================
+   БЛОК С КАРТИНКОЙ
+   ============================================ */
+.image-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.image-content h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.image-content p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   ПОДВАЛ
+   ============================================ */
+.footer {
+    background: #1a1a2e;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #e94560;
+}
+
+.footer-col p {
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 0.6;
+}
+
+/* ============================================
+   МЕДИАЗАПРОСЫ
+   ============================================ */
+
+/* Планшет: 768px */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .image-block {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .image-content h2 {
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-col {
+        min-width: 100%;
+    }
+}
+
+/* Телефон: 480px */
+@media (max-width: 480px) {
+    .main {
+        padding: 20px 10px;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    .card-icon {
+        font-size: 36px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .image-block {
+        padding: 20px 15px;
+    }
+
+    .footer {
+        padding: 30px 15px 15px;
+    }
+
+    .footer-col h4 {
+        font-size: 16px;
+    }
+
+    .footer-col p {
+        font-size: 14px;
+    }
+}
